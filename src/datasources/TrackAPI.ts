@@ -1,8 +1,8 @@
 import { RESTDataSource } from "@apollo/datasource-rest";
-import { AuthorModel, TrackModel } from "../models.js";
+import { AuthorModel, FilmModel, PeopleModel, TrackModel } from "../models.js";
 
 export class TrackAPI extends RESTDataSource {
-  baseURL = "https://odyssey-lift-off-rest-api.herokuapp.com/";
+  baseURL = "https://ghibliapi.dev";
 
   getTracks() {
     return this.get<TrackModel[]>('tracks')
@@ -11,4 +11,14 @@ export class TrackAPI extends RESTDataSource {
   getAuthorBy(id: string) {
     return this.get<AuthorModel>(`author/${id}`)
   }
+
+  getFilms() {
+    return this.get<FilmModel[]>(`films`)
+  }
+
+  getPeople() {
+    return this.get<PeopleModel[]>(`people`)
+  }
+  
+
 }

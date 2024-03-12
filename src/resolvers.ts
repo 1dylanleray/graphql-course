@@ -50,7 +50,15 @@ export const resolvers: Resolvers = {
     },
     getTracks: (parent, args, context, info) => {
       return context.dataSources.trackApi.getTracks()
-    }
+    },
+    getFilms: (parent, args, context, info) => {
+      return context.dataSources.trackApi.getFilms()
+    },
+    getPeople: (parent, args, context, info) => {
+      return context.dataSources.trackApi.getPeople()
+    },
+
+    
   },
 
   Track: {
